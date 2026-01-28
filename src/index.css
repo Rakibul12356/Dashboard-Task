@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+@theme{
+    --color-primary: #111B3C;
+    --color-secondary: #3B82F6;
+    --color-stat-bg: #0F172B80;
+    --color-accent: #101a38;
+    --color-border: #152c5d;
+}
+
+body{
+    @apply bg-linear-to-b from-[#152354] to-primary;
+}
