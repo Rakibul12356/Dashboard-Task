@@ -73,17 +73,17 @@ const CallLogs = () => {
 
   const getStatusBadge = (status, statusColor) => {
     const colorMap = {
-      'AI Resolved': 'bg-green-500/20 text-green-400 border-green-500/30',
-      'Warm Transfer': 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-      'Appointment': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-      'Dropped': 'bg-red-500/20 text-red-400 border-red-500/30',
+      'AI Resolved': 'bg-gradient-to-br from-[#00C95033] to-[#00BC7D33] text-[#05DF72] border-[#00C9504D]',
+      'Warm Transfer': 'bg-gradient-to-br from-[#FF690033] to-[#FB2C3633] text-[#FF8904] border-[#FF69004D]',
+      'Appointment': 'bg-gradient-to-br from-[#2B7FFF33] to-[#00B8DB33] text-[#51A2FF] border-[#2B7FFF4D]',
+      'Dropped': 'bg-gradient-to-br from-[#FF150033] to-[#FB2C3633] text-[#FF0404] border-red-[#FF69004D]',
     };
     return colorMap[status] || 'bg-gray-500/20 text-gray-400 border-gray-500/30';
   };
 
   const getIssueBadge = (issueType) => {
     const colorMap = {
-      'Screen': 'bg-cyan-500/20 text-cyan-400',
+      'Screen': 'bg-[#2B7FFF33] text-[#2B7FFF]',
       'Software': 'bg-purple-500/20 text-purple-400',
       'Battery': 'bg-yellow-500/20 text-yellow-400',
       'Unknown': 'bg-gray-500/20 text-gray-400',
@@ -134,11 +134,11 @@ const CallLogs = () => {
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Call List */}
-        <div className="bg-[#0d1a2d] rounded-xl border border-white/5 overflow-hidden">
-          <div className="p-4 border-b border-white/5">
+        <div className="bg-[#0F172B80] rounded-xl border border-[#2B7FFF33] overflow-hidden">
+          <div className="p-4 border-b border-[#2B7FFF33]">
             <h2 className="text-white font-semibold">Call List</h2>
           </div>
-          <div className="divide-y divide-white/5 max-h-[60vh] lg:max-h-none overflow-y-auto">
+          <div className="divide-y divide-[#2B7FFF33] max-h-[60vh] lg:max-h-none overflow-y-auto">
             {callsData.map((call) => (
               <div
                 key={call.id}
