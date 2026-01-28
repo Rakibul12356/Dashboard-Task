@@ -12,7 +12,7 @@ const Input = ({
   return (
     <div className={className}>
       {label && (
-        <label className="block text-white/80 text-sm font-medium mb-2">
+        <label className="block text-white text-sm font-medium mb-2">
           {label}
         </label>
       )}
@@ -22,7 +22,7 @@ const Input = ({
         onChange={onChange}
         placeholder={placeholder}
         disabled={disabled}
-        className="w-full bg-[#0a1628] border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-[rgba(10,10,15,0.5)] border border-[#00FF8833] rounded-lg px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-green-500 disabled:opacity-60 disabled:cursor-not-allowed"
       />
     </div>
   );

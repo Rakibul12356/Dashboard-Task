@@ -9,7 +9,7 @@ const RootLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-[#070d1f]">
+    <div className="flex min-h-screen bg-linear-to-br from-[#020618] via-[#162456] to-[#0F172B]">
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div 

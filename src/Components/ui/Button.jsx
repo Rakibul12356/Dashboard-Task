@@ -9,7 +9,7 @@ const Button = ({
   type = 'button',
   disabled = false
 }) => {
-  const baseClasses = 'font-medium rounded-full transition-all flex items-center justify-center gap-2';
+  const baseClasses = 'font-medium rounded-lg transition-all flex items-center justify-center gap-2';
   
   const variantClasses = {
     primary: 'bg-green-500 hover:bg-green-600 text-white',

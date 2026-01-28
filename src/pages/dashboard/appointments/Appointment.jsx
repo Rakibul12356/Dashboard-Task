@@ -12,7 +12,7 @@ const appointmentsData = [
 
 // Stat Card Component
 const StatCard = ({ icon, label, value, subtext, subtextColor }) => (
-  <div className="bg-[#0d1a2d] rounded-xl p-5 border border-white/5 h-36.5">
+  <div className="bg-[#0F172B80] rounded-xl p-5 border border-[#2B7FFF33] h-36.5">
     <div className="flex items-center gap-2 text-white/60  mb-2">
       {icon}
       <span className='text-sm'>{label}</span>
@@ -41,11 +41,10 @@ const Appointment = () => {
         <button
           key={i}
           onClick={() => setCurrentPage(i)}
-          className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm transition-colors ${
-            currentPage === i
-              ? 'bg-blue-500 text-white'
-              : 'text-white/60 hover:bg-white/10'
-          }`}
+          className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm transition-colors ${currentPage === i
+              ? 'bg-[#A6C8FF] text-white'
+              : 'text-[#0F62FE]'
+            }`}
         >
           {i}
         </button>
@@ -58,11 +57,10 @@ const Appointment = () => {
       <button
         key={totalPages}
         onClick={() => setCurrentPage(totalPages)}
-        className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm transition-colors ${
-          currentPage === totalPages
-            ? 'bg-blue-500 text-white'
-            : 'text-white/60 hover:bg-white/10'
-        }`}
+        className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm transition-colors ${currentPage === totalPages
+            ? 'bg-[#A6C8FF] text-white'
+            : 'text-[#0F62FE]'
+          }`}
       >
         {totalPages}
       </button>
@@ -76,7 +74,7 @@ const Appointment = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6">
         <StatCard
           icon={
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" style={{ color: '#51A2FF' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           }
@@ -87,7 +85,7 @@ const Appointment = () => {
         />
         <StatCard
           icon={
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" style={{ color: '#05DF72' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           }
@@ -98,7 +96,7 @@ const Appointment = () => {
         />
         <StatCard
           icon={
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" style={{ color: '#FDC700' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           }
@@ -110,11 +108,12 @@ const Appointment = () => {
       </div>
 
       {/* Booking Link */}
-      <div className="bg-[#0d1a2d] rounded-xl p-4 sm:p-5 border border-white/5 mb-6">
-        <p className="text-white/60 text-sm mb-3">Booking Link</p>
+      <div className="bg-gradient-to-br from-[#1A1A2E] to-[#16213E]
+ rounded-xl p-4 sm:p-5 border border-white/5 mb-6">
+        <p className="text-white text-sm mb-3">Booking Link</p>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <div className="flex-1 bg-[#070d1f] border border-white/10 rounded-lg px-4 py-3">
-            <p className="text-white/80 text-sm truncate">{bookingLink}</p>
+          <div className="flex-1 bg-[#0A0A0F80] border border-[#00FF8833] rounded-lg px-4 py-3">
+            <p className="text-white text-sm truncate">{bookingLink}</p>
           </div>
           <button
             onClick={handleCopyLink}
@@ -129,11 +128,11 @@ const Appointment = () => {
       </div>
 
       {/* Appointments Table */}
-      <div className="bg-[#0d1a2d] rounded-xl border border-white/5 overflow-hidden">
+      <div className="bg-[#111B3B] rounded-xl border border-[#2B7FFF33] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full min-w-200">
             <thead>
-              <tr className="border-b border-white/10">
+              <tr className="border-b border-[#2B7FFF33]">
                 <th className="text-left text-white/60 text-sm font-medium px-4 sm:px-6 py-4 whitespace-nowrap">Client Name</th>
                 <th className="text-left text-white/60 text-sm font-medium px-4 sm:px-6 py-4 whitespace-nowrap">Client Phone</th>
                 <th className="text-left text-white/60 text-sm font-medium px-4 sm:px-6 py-4 whitespace-nowrap">Client mail</th>
@@ -146,51 +145,52 @@ const Appointment = () => {
             </thead>
             <tbody>
               {appointmentsData.map((appointment) => (
-                <tr key={appointment.id} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                <tr key={appointment.id} className="border-b border-[#2B7FFF33] hover:bg-white/5 transition-colors">
                   <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                    <span className="text-cyan-400">{appointment.clientName}</span>
+                    <span className="text-[#51A2FF]">{appointment.clientName}</span>
                   </td>
-                  <td className="px-4 sm:px-6 py-4 text-white/80 whitespace-nowrap">{appointment.phone}</td>
-                  <td className="px-4 sm:px-6 py-4 text-white/80 whitespace-nowrap">{appointment.email}</td>
-                  <td className="px-4 sm:px-6 py-4 text-white/80 whitespace-nowrap">{appointment.device}</td>
+                  <td className="px-4 sm:px-6 py-4 text-[#CFCFCF] whitespace-nowrap">{appointment.phone}</td>
+                  <td className="px-4 sm:px-6 py-4 text-[#CFCFCF] whitespace-nowrap">{appointment.email}</td>
+                  <td className="px-4 sm:px-6 py-4 text-[#CFCFCF] whitespace-nowrap">{appointment.device}</td>
                   <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                    <span className="text-cyan-400">{appointment.repairType}</span>
+                    <span className="text-[#CFCFCF]">{appointment.repairType}</span>
                   </td>
-                  <td className="px-4 sm:px-6 py-4 text-white/80 whitespace-nowrap">{appointment.date}</td>
-                  <td className="px-4 sm:px-6 py-4 text-white/80 whitespace-nowrap">{appointment.slotNo}</td>
-                  <td className="px-4 sm:px-6 py-4 text-white/80 whitespace-nowrap">{appointment.startTime}</td>
+                  <td className="px-4 sm:px-6 py-4 text-[#CFCFCF] whitespace-nowrap">{appointment.date}</td>
+                  <td className="px-4 sm:px-6 py-4 text-[#CFCFCF] whitespace-nowrap">{appointment.slotNo}</td>
+                  <td className="px-4 sm:px-6 py-4 text-[#CFCFCF] whitespace-nowrap">{appointment.startTime}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        {/* Pagination */}
-        <div className="flex flex-wrap items-center justify-center gap-2 px-4 sm:px-6 py-4 border-t border-white/5">
-          <button
-            onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-            className="flex items-center gap-1 text-white/60 hover:text-white px-2 sm:px-3 py-2 transition-colors text-sm"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Previous
-          </button>
-          
-          <div className="flex items-center gap-1">
-            {renderPageNumbers()}
-          </div>
-          
-          <button
-            onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-            className="flex items-center gap-1 text-cyan-400 hover:text-cyan-300 px-3 py-2 transition-colors"
-          >
-            Next
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+
+      </div>
+      {/* Pagination */}
+      <div className="flex flex-wrap items-center justify-center gap-2 px-4 sm:px-6 py-4 border-t border-white/5">
+        <button
+          onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+          className="flex items-center gap-1 text-white/60 hover:text-white px-2 sm:px-3 py-2 transition-colors text-sm"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Previous
+        </button>
+
+        <div className="flex items-center gap-1">
+          {renderPageNumbers()}
         </div>
+
+        <button
+          onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+          className="flex items-center gap-1 text-[#0F62FE] px-3 py-2 transition-colors"
+        >
+          Next
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
   );

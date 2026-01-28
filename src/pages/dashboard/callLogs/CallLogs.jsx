@@ -92,7 +92,7 @@ const CallLogs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#070d1f] p-4 sm:p-6">
+    <div className="min-h-screen  p-4 sm:p-6">
       {/* Search and Filters */}
       <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6">
         <div className="flex-1 min-w-0 sm:min-w-50">
@@ -105,24 +105,24 @@ const CallLogs = () => {
               placeholder="Search by phone number, issue type..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#0d1a2d] border border-white/10 rounded-lg pl-10 pr-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500"
+              className="w-full bg-[#0F172B80] border border-[#2B7FFF33] rounded-lg pl-10 pr-4 py-3 text-white placeholder:text-[#62748E] focus:outline-none focus:border-blue-500"
             />
           </div>
         </div>
         <div className="flex flex-wrap gap-2 sm:gap-3">
-          <button className="bg-[#0d1a2d] border border-white/10 text-white/80 px-3 sm:px-4 py-2 sm:py-3 rounded-lg flex items-center gap-2 text-sm">
+          <button className="bg-[#111B3D] border border-[#2B7FFF33] text-white/80 px-3 sm:px-4 py-2 sm:py-3 rounded-lg flex items-center gap-2 text-sm">
             All Type
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <button className="bg-[#0d1a2d] border border-white/10 text-white/80 px-3 sm:px-4 py-2 sm:py-3 rounded-lg flex items-center gap-2 text-sm">
+          <button className="bg-[#111B3D] border border-[#2B7FFF33] text-white/80 px-3 sm:px-4 py-2 sm:py-3 rounded-lg flex items-center gap-2 text-sm">
             All Issues
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <button className="bg-[#0d1a2d] border border-white/10 text-white/80 px-3 sm:px-4 py-2 sm:py-3 rounded-lg flex items-center gap-2 text-sm">
+          <button className="bg-[#111B3D] border border-[#2B7FFF33] text-white/80 px-3 sm:px-4 py-2 sm:py-3 rounded-lg flex items-center gap-2 text-sm">
             Today
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
