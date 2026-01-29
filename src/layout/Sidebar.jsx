@@ -1,10 +1,12 @@
-
 const activeStyle = {
-  
-  backgroundImage: `url('/Frame.png'), linear-gradient(135deg,#152252,#111B3C)`,
-  backgroundSize: ' 100% 100%',
-  backgroundPosition: ' center, center',
+  backgroundImage: `
+    linear-gradient(135deg,#152252,#111B3C),
+    url('/Frame.png')
+  `,
+  backgroundSize: '100% 100%, cover',
+  backgroundPosition: 'center, center',
   backgroundRepeat: 'no-repeat, no-repeat',
+  backgroundBlendMode: 'overlay',
   boxShadow: `
     0 3.71px 4.85px rgba(87,177,255,0.15),
     0 10.27px 13.4px rgba(87,177,255,0.22),

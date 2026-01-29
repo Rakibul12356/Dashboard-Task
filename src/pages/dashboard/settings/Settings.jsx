@@ -1,9 +1,26 @@
+
 import React, { useState } from 'react';
 import Avatar from '../../../Components/ui/Avatar';
 import Input from '../../../Components/ui/Input';
 import Button from '../../../Components/ui/Button';
 import Tabs from '../../../Components/ui/Tabs';
 
+const buttonActiveStyle = {
+    backgroundImage: `
+    linear-gradient(135deg,#152252,#111B3C),
+    url('/Frame.png')
+  `,
+    backgroundSize: '100% 100%, cover',
+    backgroundPosition: 'center, center',
+    backgroundRepeat: 'no-repeat, no-repeat',
+    backgroundBlendMode: 'overlay',
+    boxShadow: `
+    0 3.71px 4.85px rgba(87,177,255,0.15),
+    0 10.27px 13.4px rgba(87,177,255,0.22),
+    0 24.72px 32.26px rgba(87,177,255,0.18),
+    0 42px 107px rgba(87,177,255,0.34)
+  `
+};
 
 const InfoRow = ({ label, value }) => (
     <div className="flex flex-col sm:flex-row sm:items-center py-4 border-b border-[#192D71] last:border-0">
@@ -55,17 +72,46 @@ const Settings = () => {
                     {!isEditing ? (
                         /* VIEW MODE */
                         <div className="max-w-3xl animate-fade-in">
-                            
+
                             <div className="mb-8">
                                 <p className="text-white text-sm mb-4">Profile Image</p>
                                 <div className="flex items-center gap-6">
                                     <Avatar size="lg" />
+
                                     <button
                                         onClick={() => setIsEditing(true)}
-                                        className="px-4 py-1.5 rounded-full border border-white/30 text-xs sm:text-sm text-white hover:bg-white/10 transition-colors backdrop-blur-sm"
+                                        className="relative flex items-center justify-center px-6 py-3 rounded-full transition-all hover:brightness-110"
+                                        style={buttonActiveStyle} 
                                     >
-                                        Edit Profile
+                                       
+                                        <span
+                                            className="absolute inset-0 rounded-full pointer-events-none"
+                                            style={{
+                                                border: '1px solid transparent',
+                                                background: 'linear-gradient(135deg,#0088FF,#77C0FF) border-box',
+                                                WebkitMask:
+                                                    'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                                                WebkitMaskComposite: 'xor',
+                                                maskComposite: 'exclude' 
+                                            }}
+                                        />
+
+
+                                        <span
+                                            className="absolute inset-0 rounded-full pointer-events-none"
+                                            style={{
+                                                boxShadow:
+                                                    'inset 0 1px 4px #D2EAFF, inset 0 0 18px rgba(210,234,255,.4)'
+                                            }}
+                                        />
+
+                                        {/* Button Text */}
+                                        <span className="relative z-10 text-xs sm:text-sm text-white font-medium">
+                                            Edit Profile
+                                        </span>
                                     </button>
+                                   
+
                                 </div>
                             </div>
 
@@ -85,7 +131,7 @@ const Settings = () => {
                                 <Avatar size="lg" showEditBadge onEditClick={() => console.log('Edit avatar')} />
                             </div>
 
-                            
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-3xl">
                                 <Input
                                     label="Full Name"
@@ -110,12 +156,12 @@ const Settings = () => {
                                 />
                             </div>
 
-                          {/* Save Button */}
- 							<div className="mt-8 flex justify-center max-w-3xl">
- 								<Button onClick={handleSave} className="min-w-50">
- 									Save
- 								</Button>
-						</div>
+                            {/* Save Button */}
+                            <div className="mt-8 flex justify-center max-w-3xl">
+                                <Button onClick={handleSave} className="min-w-50">
+                                    Save
+                                </Button>
+                            </div>
                         </div>
                     )}
                 </div>
