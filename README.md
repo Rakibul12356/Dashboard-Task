@@ -1,52 +1,81 @@
+# Dashboard Task
 
-# CrapUI
+A React-based dashboard application built with Vite and Tailwind CSS for managing call logs, appointments, and settings.
 
-CrapUI is a refined React starter built for developers who want speed, clarity, and a production-ready foundation without the usual setup fatigue. It combines modern tooling, clean defaults, and an intuitive structure so you can focus on building — not configuring.
+## Prerequisites
 
-If you value **simplicity**, **performance**, and **developer experience**, this starter gives you everything you need from day one.
+- Node.js (version 18.x or higher)
+- npm (comes with Node.js)
 
----
+## Installation
 
-## ✨ What You Get Out of the Box
+1. Clone the repository:
 
-**Core Frameworks**
+```bash
+git clone https://github.com/Rakibul12356/Dashboard-Task.git 
+cd Dashboard-Task
+```
 
-- **React 19** — fast, stable, and future-proof
-- **React Router** — modern routing, preconfigured
-- **Vite** — ultra-fast dev server & optimized builds
+2. Install dependencies:
 
-**Styling**
+```bash
+npm install
+```
 
-- **Tailwind CSS** — fully set up and ready
-- Clean utility-first workflow
+## Running the Project
 
-**Enhancements**
+### Development Mode
 
-- **Lenis Smooth Scrolling** — premium-grade scroll experience
-- **Motion-ready animations** — built for fluid interactions
-- **Lucide + React Icons** — scalable icon systems
+To start the development server:
 
-**Architecture & Utilities**
+```bash
+npm run dev
+```
 
-- Pre-built **Context API** structure
-- Organized folder system
-- ESLint for consistency
+The application will be available at `http://localhost:5173`
 
-A starter that feels minimal — but works like a full professional setup.
+### Production Build
 
----
+To build the project for production:
 
-## ⚙️ Tech Stack Overview
+```bash
+npm run build
+```
 
-**Runtime**
+### Preview Production Build
 
-- React: 19.2.0
-- React DOM: 19.2.0
+To preview the production build locally:
 
-**Build Tools**
+```bash
+npm run preview
+```
 
-- Vite: 7.2.4
-- @vitejs/plugin-react: 5.1.1
+## Project Structure
+
+- `src/` - Source code directory
+  - `Components/` - Reusable UI components
+  - `pages/` - Page components
+  - `layout/` - Layout components
+  - `router/` - Routing configuration
+- `public/` - Static assets
+- `index.html` - Main HTML file
+- `vite.config.js` - Vite configuration
+- `package.json` - Project dependencies and scripts
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Technologies Used
+
+- React 19.2.0
+- Vite 7.2.4
+- Tailwind CSS 4.1.18
+- React Router 7.13.0
+- React Icons 5.5.0
 
 **Styling**
 
@@ -119,17 +148,3 @@ Inside `src/App.jsx` you’ll find a clean example layout — a perfect starting
 It’s engineered for creators who want to ship fast — without sacrificing quality.
 
 ---
-
-## 🤝 Contributing
-
-Contributions are appreciated. Please open an issue before starting major changes to stay aligned with the project direction.
-
-Small, focused PRs help maintain quality and momentum.
-
----
-
-**Built with care, crafted for speed — CrapUI**
-A starter that respects your time.
-
----
-

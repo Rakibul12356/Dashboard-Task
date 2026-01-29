@@ -1,3 +1,13 @@
+
+
+import React from 'react';
+import { NavLink } from 'react-router';
+import { AiOutlineHome } from "react-icons/ai";
+import { IoCallOutline } from "react-icons/io5";
+import { PiCalendarBlank } from "react-icons/pi";
+import { TbSettings } from "react-icons/tb";
+import { IoIosLogIn } from 'react-icons/io';
+
 const activeStyle = {
   backgroundImage: `
     linear-gradient(135deg,#152252,#111B3C),
@@ -15,14 +25,6 @@ const activeStyle = {
   `
 };
 
-
-import React from 'react';
-import { NavLink } from 'react-router';
-import { AiOutlineHome } from "react-icons/ai";
-import { IoCallOutline } from "react-icons/io5";
-import { PiCalendarBlank } from "react-icons/pi";
-import { TbSettings } from "react-icons/tb";
-import { IoIosLogIn } from 'react-icons/io';
 
 const Sidebar = ({ onClose }) => {
   const links = [
@@ -99,8 +101,8 @@ const Sidebar = ({ onClose }) => {
 
       {/* Logout */}
       <div className="absolute bottom-8 left-4 right-4">
-        <button className="flex items-center gap-2 text-red-400 hover:text-red-300 px-3 py-2">
-          <IoIosLogIn className="w-6 h-6" />
+        <button className="flex items-center gap-2 text-[#FF1100] px-3 py-2">
+          <IoIosLogIn className="w-6 h-6 text-[#000000]" />
           Log Out
         </button>
       </div>
