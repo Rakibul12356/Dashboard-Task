@@ -40,7 +40,7 @@ const ClockIcon = () => (
 
 // Stats Card Component
 const StatCard = ({ icon, iconBg, label, value, change, changeColor }) => (
-  <div className="bg-stat-bg rounded-xl p-4 border border-border">
+  <div className="bg-[#0F172B80] rounded-xl p-4 border border-[#2B7FFF33]">
     <div className="flex justify-between items-start">
       <div>
         <p className="text-[#90A1B9] text-sm mb-1">{label}</p>
@@ -105,7 +105,7 @@ const IndexPage = () => {
   const areaPoints = `0,100 ${points} 100,100`;
 
   return (
-    <div className="min-h-screen bg-linear-to-tl from-stat-bg to-primary  p-4 sm:p-6">
+    <div className="min-h-screen   p-4 sm:p-6">
       {/* Stats Cards - Row 1 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4">
         <StatCard

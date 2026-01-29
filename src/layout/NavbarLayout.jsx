@@ -22,7 +22,7 @@ const NavbarLayout = ({ onMenuClick }) => {
   };
 
   return (
-    <div className='flex justify-between items-center px-4 sm:px-6 py-4 bg-stat-bg'>
+    <div className='flex justify-between items-center px-4 sm:px-6 py-4 bg-[#111B3C]'>
       <div className="flex items-center gap-3">
         {/* Mobile menu button */}
         <button 
