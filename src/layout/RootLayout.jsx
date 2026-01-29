@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import NavbarLayout from './NavbarLayout';
 import FooterLayout from './FooterLayout';
-import SmoothScroll from '../components/utility/SmoothScroll';
+import SmoothScroll from '../Components/utility/SmoothScroll';
 import Sidebar from './Sidebar';
 import { useState } from 'react';
 
