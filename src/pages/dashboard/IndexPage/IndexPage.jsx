@@ -161,13 +161,13 @@ const IndexPage = () => {
      
 
       {/* Call Trends Chart */}
-      <div className="bg-stat-bg rounded-xl p-6 border border-border mb-6">
+      <div className="bg-[#0F172B80] rounded-xl p-6 border border-border mb-6">
         <div className="flex justify-between items-center mb-6">
           <div>
             <h2 className="text-white text-lg font-semibold">Call Trends - This Week</h2>
             <p className="text-white/50 text-sm">Total: 472 calls</p>
           </div>
-          <button className="bg-[#2B7FFF33]/20 text-white/80 px-4 py-2 rounded-lg text-sm flex items-center gap-2">
+          <button className="bg-[#1D293D] text-white px-4 py-2 border border-[#2B7FFF33] rounded-lg text-sm flex items-center gap-2">
             This Week
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { FaRegFileAlt } from "react-icons/fa";
 // Sample call data
 const callsData = [
   {
@@ -64,14 +64,14 @@ const transcriptMessages = [
   { speaker: 'Customer', message: 'Hi, my iPhone 13 screen is cracked. How much would it cost to repair?', isAI: false },
   { speaker: 'AI Assistant', message: 'I can help you with that! For an iPhone 13 screen repair, our price is $199. This includes parts, labor, and comes with a 90-day warranty. Would you like to book an appointment?', isAI: true },
   { speaker: 'Customer', message: 'Yes, please! When are you available?', isAI: false },
-  { speaker: 'AI Assistant', message: 'Great! I have availability today at 2:00 PM or tomorrow at 10:00 AM. Which works better for you?', isAI: true },
+  
 ];
 
 const CallLogs = () => {
   const [selectedCall, setSelectedCall] = useState(callsData[0]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const getStatusBadge = (status, statusColor) => {
+  const getStatusBadge = (status) => {
     const colorMap = {
       'AI Resolved': 'bg-gradient-to-br from-[#00C95033] to-[#00BC7D33] text-[#05DF72] border-[#00C9504D]',
       'Warm Transfer': 'bg-gradient-to-br from-[#FF690033] to-[#FB2C3633] text-[#FF8904] border-[#FF69004D]',
@@ -184,8 +184,8 @@ const CallLogs = () => {
         </div>
 
         {/* Call Details */}
-        <div className="bg-[#0d1a2d] rounded-xl border border-white/5 overflow-hidden">
-          <div className="p-4 border-b border-white/5">
+        <div className="bg-[#0F172B80] rounded-xl border border-[#2B7FFF33] overflow-hidden">
+          <div className="p-4 border-b border-[#2B7FFF33]">
             <h2 className="text-white font-semibold">Call Details</h2>
           </div>
           
@@ -194,35 +194,36 @@ const CallLogs = () => {
               {/* Call Info Grid */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div>
-                  <p className="text-white/50 text-sm mb-1">Phone Number</p>
+                  <p className="text-[#90A1B9] text-sm mb-1">Phone Number</p>
                   <p className="text-white">+1 (555) 123-4567</p>
                 </div>
                 <div>
-                  <p className="text-white/50 text-sm mb-1">Duration</p>
+                  <p className="text-[#90A1B9] text-sm mb-1">Duration</p>
                   <p className="text-white">4:32</p>
                 </div>
                 <div>
-                  <p className="text-white/50 text-sm mb-1">Date & Time</p>
+                  <p className="text-[#90A1B9] text-sm mb-1">Date & Time</p>
                   <p className="text-white">2025-12-16 10:45 AM</p>
                 </div>
                 <div>
-                  <p className="text-white/50 text-sm mb-1">Issue Type</p>
+                  <p className="text-[#90A1B9] text-sm mb-1">Issue Type</p>
                   <p className="text-white">Screen</p>
                 </div>
                 <div>
-                  <p className="text-white/50 text-sm mb-1">Call Type</p>
-                  <span className="px-3 py-1 rounded-full text-xs bg-green-500/20 text-green-400 border border-green-500/30">
+                  <p className="text-[#90A1B9] text-sm mb-2">Call Type</p>
+                  <span className="px-3 py-1 rounded-lg text-sm bg-green-500/20 text-green-400 border border-green-500/30">
                     AI Resolved
                   </span>
                 </div>
-                <div>
-                  <p className="text-white/50 text-sm mb-1">Outcome</p>
+               
+              </div>
+               <div className='mb-4' >
+                  <p className="text-[#90A1B9] text-sm mb-1">Outcome</p>
                   <p className="text-white">Quote provided</p>
                 </div>
-              </div>
 
               {/* Audio Player */}
-              <button className="w-full bg-linear-to-r from-[#AD46FF33] to-[#F6339A33] text-[#C27AFF] py-3 rounded-[14px] flex items-center justify-center gap-2 mb-6 hover:bg-blue-500/30 transition-colors">
+              <button className="w-full bg-linear-to-r from-[#AD46FF33] to-[#F6339A33] text-[#C27AFF] py-3 rounded-[14px] flex items-center justify-center gap-2 mb-6  transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
@@ -232,15 +233,13 @@ const CallLogs = () => {
               {/* Conversation Transcript */}
               <div>
                 <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
+                 <FaRegFileAlt className='text-[#51A2FF]'/>
                   Conversation Transcript
                 </h3>
                 <div className="space-y-4 max-h-64 overflow-y-auto">
                   {transcriptMessages.map((msg, index) => (
                     <div key={index}>
-                      <p className={`text-sm font-medium mb-1 ${msg.isAI ? 'text-red-400' : 'text-cyan-400'}`}>
+                      <p className={`text-sm font-medium mb-1 ${msg.isAI ? 'text-[#05DF72]' : 'text-[#51A2FF]'}`}>
                         {msg.speaker}:
                       </p>
                       <p className="text-white/80 text-sm">{msg.message}</p>

@@ -12,12 +12,12 @@ const RootLayout = () => {
     <div className="flex min-h-screen bg-linear-to-br from-[#020618] via-[#162456] to-[#0F172B]">
       {/* Mobile overlay */}
       {sidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-20 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
-      
+
       {/* Sidebar */}
       <aside className={`
         fixed left-0 top-0 h-screen z-30
@@ -27,7 +27,7 @@ const RootLayout = () => {
       `}>
         <Sidebar onClose={() => setSidebarOpen(false)} />
       </aside>
-      
+
       {/* Main content */}
       <div className="flex-1 lg:ml-56 flex flex-col min-w-0">
         <header className="sticky top-0 z-10 bg-[#070d1f]">
