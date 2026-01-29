@@ -1,6 +1,22 @@
-import React, { useState } from 'react';
 
-// Sample appointments data
+
+import React, { useState } from 'react';
+import { BsCopy } from "react-icons/bs";
+
+
+const copyButtonStyle = {
+  backgroundImage: `
+    linear-gradient(135deg,#152252,#111B3C),
+    url('/Frame.png')
+  `,
+  backgroundSize: '100% 100%, cover',
+  backgroundPosition: 'center, center',
+  backgroundRepeat: 'no-repeat, no-repeat',
+  backgroundBlendMode: 'overlay',
+  
+};
+
+
 const appointmentsData = [
   { id: 1, clientName: 'Jane D', phone: '01960685765', email: 'admin@gmail.com', device: 'Apple/Iphone 13pro', repairType: 'Screen', date: '02/06/2026', slotNo: 1, startTime: '09:00' },
   { id: 2, clientName: 'Jane D', phone: '01960685765', email: 'admin@gmail.com', device: 'Apple/Iphone 13pro', repairType: 'Screen', date: '02/06/2026', slotNo: 1, startTime: '10:00' },
@@ -108,22 +124,47 @@ const Appointment = () => {
       </div>
 
       {/* Booking Link */}
-      <div className="bg-gradient-to-br from-[#1A1A2E] to-[#16213E]
- rounded-xl p-4 sm:p-5 border border-white/5 mb-6">
+      <div className="bg-linear-to-br from-[#1A1A2E] to-[#16213E] rounded-xl p-4 sm:p-5 border border-white/5 mb-6">
         <p className="text-white text-sm mb-3">Booking Link</p>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="flex-1 bg-[#0A0A0F80] border border-[#00FF8833] rounded-lg px-4 py-3">
             <p className="text-white text-sm truncate">{bookingLink}</p>
           </div>
+          
           <button
             onClick={handleCopyLink}
-            className="bg-white/10 hover:bg-white/20 text-white px-4 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors border border-white/10 whitespace-nowrap"
+            className="relative flex items-center justify-center px-6 py-3 rounded-full transition-all hover:brightness-110"
+            style={copyButtonStyle}
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-            </svg>
-            {copied ? 'Copied!' : 'Copy Link'}
+            
+             <span
+                className="absolute inset-0 rounded-lg pointer-events-none"
+                style={{
+                    border: '1px solid transparent',
+                    background: 'linear-gradient(135deg,#0088FF,#77C0FF) border-box',
+                    WebkitMask:
+                        'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                    WebkitMaskComposite: 'xor',
+                    maskComposite: 'exclude'
+                }}
+            />
+
+            
+            <span
+                className="absolute inset-0 rounded-lg pointer-events-none"
+                style={{
+                    boxShadow:
+                        'inset 0 1px 4px #D2EAFF, inset 0 0 18px rgba(210,234,255,.4)'
+                }}
+            />
+
+            {/* Button Content */}
+            <span className="relative z-10 flex items-center gap-2 text-white font-medium whitespace-nowrap">
+               <BsCopy />
+               {copied ? 'Copied!' : 'Copy Link'}
+            </span>
           </button>
+
         </div>
       </div>
 
